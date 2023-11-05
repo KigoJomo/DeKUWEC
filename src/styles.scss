@@ -19,11 +19,15 @@ html {
     height: 100%;
     overflow: hidden;
     padding: 0px 20px;
-    padding-top: 85px;
     position: relative;
     background: url("../Images/Earth_Light.webp");
-    background-position: center;
-    background-size: cover;
+    background-position: top left;
+    // background-position: top right;
+    // background-position: bottom right;
+    // background-position: bottom left;
+    // background-position: center;
+    background-size: 150vw;
+    transition: all 0.5s ease-in;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,6 +66,11 @@ html {
       .left {
         font-size: 1rem;
         font-family: "Krona One";
+        text-decoration: none;
+        color: white;
+        &:visited{
+          color: white;
+        }
       }
 
       ul {
@@ -86,10 +95,7 @@ html {
             line-height: normal;
             text-transform: capitalize;
             text-decoration: none;
-            &:visited {
-              color: white;
-            }
-            transition: all .5s ease;
+            transition: all 0.5s ease;
           }
           .active {
             color: $--green;
@@ -140,7 +146,7 @@ html {
     }
 
     .container {
-      height: 100%;
+      height: 100vh;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -170,6 +176,7 @@ html {
         scroll-snap-align: start;
         flex-shrink: 0;
         height: 100%;
+        padding-top: 85px;
         display: flex;
         flex-direction: column;
         align-items: center;
