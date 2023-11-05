@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Krona+One&display=swap");
 
 $--back-black: #00000040;
-$--green: #00FF06;
+$--green: #00ff06;
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@ html {
     padding: 0px 20px;
     padding-top: 85px;
     position: relative;
-    background: url('../Images/Earth_Light.webp');
+    background: url("../Images/Earth_Light.webp");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -53,9 +53,9 @@ html {
         width: 24px;
         height: 24px;
         cursor: pointer;
-        svg{
-            width: 100%;
-            height: 100%;
+        svg {
+          width: 100%;
+          height: 100%;
         }
       }
 
@@ -74,8 +74,8 @@ html {
         gap: 40px;
 
         li {
-            height: fit-content;
-            line-height: .5rem;
+          height: fit-content;
+          line-height: 0.5rem;
           a {
             /* nav link */
             // line-height: .5rem;
@@ -89,6 +89,11 @@ html {
             &:visited {
               color: white;
             }
+            transition: all .5s ease;
+          }
+          .active {
+            color: $--green;
+            font-size: 0.7rem;
           }
         }
       }
@@ -98,9 +103,9 @@ html {
         width: 28px;
         aspect-ratio: 1/1;
         fill: white;
-        svg{
-            width: 100%;
-            height: 100%;
+        svg {
+          width: 100%;
+          height: 100%;
         }
       }
       @media (min-width: 769px) {
@@ -137,29 +142,32 @@ html {
     .container {
       height: 100%;
       width: 100%;
-      overflow-y: scroll;
-      scroll-behavior: smooth;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       gap: 0;
 
-      &::-webkit-scrollbar{
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+
+      &::-webkit-scrollbar {
         width: 10px;
       }
-      &::-webkit-scrollbar-track{
+      &::-webkit-scrollbar-track {
         background-color: $--green;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         background-clip: padding-box;
       }
-      &::-webkit-scrollbar-thumb{
+      &::-webkit-scrollbar-thumb {
         border-radius: 20px;
         background-color: white;
       }
 
       section {
+        scroll-snap-align: start;
         flex-shrink: 0;
         height: 100%;
         display: flex;
@@ -167,7 +175,10 @@ html {
         align-items: center;
         justify-content: center;
 
-        text-transform: capitalize;
+        h1 {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+        }
 
         &:nth-child(1) {
         }
