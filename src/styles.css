@@ -15,11 +15,9 @@ html {
 html body {
   height: 100%;
   overflow: hidden;
-  padding: 0px 20px;
   position: relative;
-  background: url("../Images/Earth_Light.webp");
-  background-position: top left;
-  background-size: 150vw;
+  background: url("../Images/rough.svg") center/cover no-repeat;
+  background-attachment: scroll;
   transition: all 0.5s ease-in;
   display: flex;
   flex-direction: column;
@@ -28,6 +26,7 @@ html body {
 }
 html body nav {
   position: absolute;
+  z-index: 10;
   top: 25px;
   width: 98%;
   max-height: 60px;
@@ -148,22 +147,14 @@ html body .container {
   scroll-snap-type: y mandatory;
 }
 html body .container::-webkit-scrollbar {
-  width: 10px;
-}
-html body .container::-webkit-scrollbar-track {
-  background-color: #00ff06;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  background-clip: padding-box;
-}
-html body .container::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: white;
+  display: none;
 }
 html body .container section {
   scroll-snap-align: start;
   flex-shrink: 0;
   height: 100%;
+  width: 100%;
+  padding: 25px 20px;
   padding-top: 85px;
   display: flex;
   flex-direction: column;
@@ -173,4 +164,74 @@ html body .container section {
 html body .container section h1 {
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+html body .container section:nth-child(1) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  overflow-y: scroll;
+}
+html body .container section:nth-child(1)::-webkit-scrollbar {
+  width: 10px;
+}
+html body .container section:nth-child(1)::-webkit-scrollbar-track {
+  background-color: white;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  background-clip: padding-box;
+}
+html body .container section:nth-child(1)::-webkit-scrollbar-thumb {
+  background-color: #5f5f5f;
+  border-radius: 10px;
+}
+html body .container section:nth-child(1) .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+html body .container section:nth-child(1) .left h1 {
+  filter: drop-shadow(5px 5px 2px black);
+  font-family: "Krona One", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-image: url("../Images/img-earth.png");
+  background-size: 200%;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html body .container section:nth-child(1) .left p {
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--back-black, rgba(0, 0, 0, 0.25));
+  /* bck blur */
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  text-align: center;
+  text-shadow: 0px 4px 20px #000;
+  /* Paragraph */
+  font-family: "Inter";
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+html body .container section:nth-child(1) .right {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body .container section:nth-child(1) .right img {
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  filter: drop-shadow(20px 20px 4px rgba(0, 0, 0, 0.5058823529));
 }/*# sourceMappingURL=styles.css.map */

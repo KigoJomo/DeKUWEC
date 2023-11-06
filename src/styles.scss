@@ -18,15 +18,9 @@ html {
   body {
     height: 100%;
     overflow: hidden;
-    padding: 0px 20px;
     position: relative;
-    background: url("../Images/Earth_Light.webp");
-    background-position: top left;
-    // background-position: top right;
-    // background-position: bottom right;
-    // background-position: bottom left;
-    // background-position: center;
-    background-size: 150vw;
+    background: url("../Images/rough.svg") center/cover no-repeat;
+    background-attachment: scroll;
     transition: all 0.5s ease-in;
     display: flex;
     flex-direction: column;
@@ -35,6 +29,7 @@ html {
 
     nav {
       position: absolute;
+      z-index: 10;
       top: 25px;
       width: 98%;
       max-height: 60px;
@@ -68,7 +63,7 @@ html {
         font-family: "Krona One";
         text-decoration: none;
         color: white;
-        &:visited{
+        &:visited {
           color: white;
         }
       }
@@ -159,23 +154,15 @@ html {
       scroll-snap-type: y mandatory;
 
       &::-webkit-scrollbar {
-        width: 10px;
-      }
-      &::-webkit-scrollbar-track {
-        background-color: $--green;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        background-clip: padding-box;
-      }
-      &::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background-color: white;
+        display: none;
       }
 
       section {
         scroll-snap-align: start;
         flex-shrink: 0;
         height: 100%;
+        width: 100%;
+        padding: 25px 20px;
         padding-top: 85px;
         display: flex;
         flex-direction: column;
@@ -188,6 +175,72 @@ html {
         }
 
         &:nth-child(1) {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          overflow-y: scroll;
+          &::-webkit-scrollbar{
+            width: 10px;
+          }
+          &::-webkit-scrollbar-track{
+            background-color: white;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            background-clip: padding-box;
+          }
+          &::-webkit-scrollbar-thumb{
+            background-color: #5f5f5f;
+            border-radius: 10px;
+          }
+          .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            h1 {
+              filter: drop-shadow(5px 5px 2px black);
+              font-family: "Krona One", sans-serif;
+              font-size: 2.5rem;
+              font-weight: 400;
+              text-transform: uppercase;
+              // color: transparent;
+              background-image: url("../Images/img-earth.png");
+              background-size: 200%;
+              background-position: center;
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            p {
+              padding: 20px;
+              border-radius: 10px;
+              background: var(--back-black, rgba(0, 0, 0, 0.25));
+              /* bck blur */
+              backdrop-filter: blur(100px);
+              text-align: center;
+              text-shadow: 0px 4px 20px #000;
+              /* Paragraph */
+              font-family: "Inter";
+              font-size: 0.68rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+          .right {
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 80%;
+              height: 80%;
+              object-fit: contain;
+              object-position: center;
+              filter: drop-shadow(20px 20px 4px #00000081);
+            }
+          }
         }
         &:nth-child(2) {
         }
