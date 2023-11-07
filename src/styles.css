@@ -518,16 +518,84 @@ html body .container section:nth-child(3) .events .event a:visited {
 }
 html body .container section:nth-child(4) {
   display: flex;
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 html body .container section:nth-child(4) h1 {
   text-transform: capitalize;
   font-size: 1.8rem;
   filter: drop-shadow(7px 0px 5px rgba(0, 0, 0, 0.67));
+}
+html body .container section:nth-child(4) .links {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.19);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
+html body .container section:nth-child(4) .links a {
+  width: 80px;
+  height: 5px;
+  border-radius: 30px;
+  background: #fff;
+}
+html body .container section:nth-child(4) .slides {
+  width: 75%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+html body .container section:nth-child(4) .slides::-webkit-scrollbar {
+  display: none;
+}
+html body .container section:nth-child(4) .slides .slide {
+  display: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.2509803922);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+}
+html body .container section:nth-child(4) .slides .slide img {
+  height: 100%;
+  width: 500px;
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+html body .container section:nth-child(4) .slides .slide .desc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+}
+html body .container section:nth-child(4) .slides .slide .desc h2 {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+html body .container section:nth-child(4) .slides .slide .desc p {
+  font-size: 0.8rem;
+  color: #CAC7C7;
+}
+html body .container section:nth-child(4) .slides .slide .desc p span {
+  color: white;
+  font-weight: 800;
 }
 html body .container section:nth-child(5) {
   display: none;
