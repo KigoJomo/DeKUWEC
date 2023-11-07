@@ -19,7 +19,10 @@ html {
     height: 100%;
     overflow: hidden;
     position: relative;
-    background: url("../Images/rough.svg") center/cover no-repeat;
+    background: url("../Images/img_earth.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-attachment: scroll;
     transition: all 0.5s ease-in;
     display: flex;
@@ -205,7 +208,7 @@ html {
               font-weight: 400;
               text-transform: uppercase;
               // color: transparent;
-              background-image: url("../Images/img-earth.png");
+              background-image: url("../Images/img_earth.webp");
               background-size: 200%;
               background-position: center;
               background-clip: text;

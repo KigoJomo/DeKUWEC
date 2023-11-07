@@ -16,7 +16,10 @@ html body {
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: url("../Images/rough.svg") center/cover no-repeat;
+  background: url("../Images/img_earth.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: scroll;
   transition: all 0.5s ease-in;
   display: flex;
@@ -197,7 +200,7 @@ html body .container section:nth-child(1) .left h1 {
   font-size: 2.5rem;
   font-weight: 400;
   text-transform: uppercase;
-  background-image: url("../Images/img-earth.png");
+  background-image: url("../Images/img_earth.webp");
   background-size: 200%;
   background-position: center;
   background-clip: text;
