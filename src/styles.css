@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: white;
 }
 @media (min-width: 769px) {
@@ -90,7 +91,7 @@ html body nav ul li {
 }
 html body nav ul li a {
   /* nav link */
-  font-family: "Ubuntu";
+  font-family: "";
   font-size: 0.5rem;
   font-style: normal;
   font-weight: 500;
@@ -100,7 +101,7 @@ html body nav ul li a {
   transition: all 0.5s ease;
 }
 html body nav ul li .active {
-  color: #00ff06;
+  color: #00b103;
   font-size: 0.7rem;
   text-decoration: underline;
 }
@@ -167,7 +168,7 @@ html body nav .query svg {
     width: 100%;
   }
   html body nav ul li .active {
-    color: #00ff06;
+    color: #00b103;
     font-size: 1.2rem;
     text-decoration: none;
   }
@@ -228,8 +229,8 @@ html body .container section:nth-child(1) .left {
 html body .container section:nth-child(1) .left h1 {
   filter: drop-shadow(5px 5px 2px black);
   font-family: "Orbitron", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-size: 3.5rem;
+  font-weight: 800;
   text-transform: uppercase;
   background-image: url("../Images/img_earth.webp");
   background-size: 200%;
@@ -248,7 +249,7 @@ html body .container section:nth-child(1) .left p {
   text-align: center;
   text-shadow: 0px 4px 20px #000;
   /* Paragraph */
-  font-family: "Ubuntu";
+  font-family: "Poppins";
   font-size: 0.68rem;
   font-style: normal;
   font-weight: 400;
@@ -361,7 +362,7 @@ html body .container section:nth-child(2) .right .mission_vision {
 html body .container section:nth-child(2) .right .mission_vision h2 {
   color: #fff;
   filter: drop-shadow(7px 0px 5px rgba(0, 0, 0, 0.67));
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -441,7 +442,7 @@ html body .container section:nth-child(3) .events .event {
 }
 html body .container section:nth-child(3) .events .event h2 {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   text-transform: capitalize;
 }
@@ -506,7 +507,7 @@ html body .container section:nth-child(3) .events .event a:visited {
     background-clip: padding-box;
   }
   html body .container section:nth-child(3) .events::-webkit-scrollbar-thumb {
-    background-color: #00ff06;
+    background-color: #00b103;
     border-radius: 30px;
   }
   html body .container section:nth-child(3) .events .event {
@@ -543,6 +544,9 @@ html body .container section:nth-child(4) .links a {
   width: 80px;
   height: 5px;
   border-radius: 30px;
+  background: #7c7c7c;
+}
+html body .container section:nth-child(4) .links .active {
   background: #fff;
 }
 html body .container section:nth-child(4) .slides {
@@ -583,16 +587,31 @@ html body .container section:nth-child(4) .slides .slide img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  border: 1px solid white;
 }
 html body .container section:nth-child(4) .slides .slide .desc {
   width: 100%;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 35px;
 }
+html body .container section:nth-child(4) .slides .slide .desc::-webkit-scrollbar {
+  width: 10px;
+}
+html body .container section:nth-child(4) .slides .slide .desc::-webkit-scrollbar-track {
+  background-color: white;
+  background-clip: padding-box;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+html body .container section:nth-child(4) .slides .slide .desc::-webkit-scrollbar-thumb {
+  background-color: #00b103;
+  border-radius: 10px;
+}
 html body .container section:nth-child(4) .slides .slide .desc h2 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: capitalize;
 }
 html body .container section:nth-child(4) .slides .slide .desc p {
@@ -638,7 +657,7 @@ html body .container section:nth-child(5) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4vh;
+  gap: 2vh;
 }
 html body .container section:nth-child(5) h1 {
   font-size: 1.8rem;
@@ -646,25 +665,51 @@ html body .container section:nth-child(5) h1 {
   filter: drop-shadow(7px 0px 5px rgba(0, 0, 0, 0.67));
 }
 html body .container section:nth-child(5) .cards {
+  position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 20px;
+  gap: 2vh;
   overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  html body .container section:nth-child(5) .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+html body .container section:nth-child(5) .cards::-webkit-scrollbar {
+  width: 10px;
+}
+html body .container section:nth-child(5) .cards::-webkit-scrollbar-track {
+  background-color: white;
+  background-clip: padding-box;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+html body .container section:nth-child(5) .cards::-webkit-scrollbar-thumb {
+  background-color: #00b103;
+  border-radius: 10px;
 }
 html body .container section:nth-child(5) .cards .card {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3vh;
+  gap: 1vh;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.2509803922);
   -webkit-backdrop-filter: blur(100px);
           backdrop-filter: blur(100px);
 }
+@media (max-width: 768px) {
+  html body .container section:nth-child(5) .cards .card {
+    width: 80vw;
+  }
+}
 html body .container section:nth-child(5) .cards .card h2 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: capitalize;
 }
 html body .container section:nth-child(5) .cards .card ul {
@@ -672,9 +717,159 @@ html body .container section:nth-child(5) .cards .card ul {
   margin-left: 5%;
 }
 html body .container section:nth-child(5) .cards .card ul li {
-  color: #CAC7C7;
+  color: #cac7c7;
   font-size: 0.8rem;
   font-weight: 300;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) {
+  align-items: center;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) h2 {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) ul {
+  width: 70%;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) ul li p {
+  width: 25%;
+  text-transform: capitalize;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(3) ul li span {
+  width: 75%;
+  text-transform: capitalize;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(4) {
+  align-items: center;
+  justify-content: space-between;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(4) h2 {
+  text-align: center;
+}
+html body .container section:nth-child(5) .cards .card:nth-child(4) a {
+  text-transform: capitalize;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.8rem;
+  background-color: #00b103;
+  border: 1px solid #00b103;
+  border-radius: 5px;
+  width: 90%;
+  padding: 2%;
+}
+html body .container section:nth-child(5) .cards form {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.2509803922);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+html body .container section:nth-child(5) .cards form svg {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+html body .container section:nth-child(5) .cards form label {
+  color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: 500px;
+  text-transform: capitalize;
+}
+html body .container section:nth-child(5) .cards form input[type=text],
+html body .container section:nth-child(5) .cards form input[type=email],
+html body .container section:nth-child(5) .cards form input[type=tel],
+html body .container section:nth-child(5) .cards form select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #696969;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  color: black;
+}
+html body .container section:nth-child(5) .cards form input[type=text]:focus,
+html body .container section:nth-child(5) .cards form input[type=email]:focus,
+html body .container section:nth-child(5) .cards form input[type=tel]:focus,
+html body .container section:nth-child(5) .cards form select:focus {
+  border: 1px solid #696969;
+  outline: none;
+}
+html body .container section:nth-child(5) .cards form input[type=text] option,
+html body .container section:nth-child(5) .cards form input[type=email] option,
+html body .container section:nth-child(5) .cards form input[type=tel] option,
+html body .container section:nth-child(5) .cards form select option {
+  color: rgb(94, 94, 94);
+}
+html body .container section:nth-child(5) .cards form input[type=text] option:focus, html body .container section:nth-child(5) .cards form input[type=text] option:hover,
+html body .container section:nth-child(5) .cards form input[type=email] option:focus,
+html body .container section:nth-child(5) .cards form input[type=email] option:hover,
+html body .container section:nth-child(5) .cards form input[type=tel] option:focus,
+html body .container section:nth-child(5) .cards form input[type=tel] option:hover,
+html body .container section:nth-child(5) .cards form select option:focus,
+html body .container section:nth-child(5) .cards form select option:hover {
+  color: black;
+}
+html body .container section:nth-child(5) .cards form input[type=submit] {
+  background-color: #00b103;
+  text-transform: capitalize;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+html body .container section:nth-child(5) .cards form input[type=submit]:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}
+@media (min-width: 769px) {
+  html body .container section:nth-child(5) .cards form {
+    gap: 2vh;
+    flex-wrap: wrap;
+  }
+  html body .container section:nth-child(5) .cards form label {
+    font-size: 0.7rem;
+  }
+  html body .container section:nth-child(5) .cards form input[type=text],
+  html body .container section:nth-child(5) .cards form input[type=email],
+  html body .container section:nth-child(5) .cards form input[type=tel],
+  html body .container section:nth-child(5) .cards form select {
+    font-size: 0.5rem;
+    padding: 10px 10px;
+  }
+  html body .container section:nth-child(5) .cards form input[type=text] option,
+  html body .container section:nth-child(5) .cards form input[type=email] option,
+  html body .container section:nth-child(5) .cards form input[type=tel] option,
+  html body .container section:nth-child(5) .cards form select option {
+    font-size: 0.5rem;
+  }
+  html body .container section:nth-child(5) .cards form input[type=submit] {
+    font-size: 0.7rem;
+  }
 }
 html body .container section:nth-child(6) {
   display: none;
